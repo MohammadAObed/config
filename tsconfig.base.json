@@ -1,8 +1,9 @@
 {
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "moduleResolution": "Bundler",
     "moduleDetection": "force",
     "resolveJsonModule": true,
@@ -29,6 +30,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noStrictGenericChecks": false,
-    "jsx": "react-jsx"
+    "noUncheckedSideEffectImports": true,
+    "noEmit": true,
+    "useDefineForClassFields": true,
+    "jsx": "react-jsx",
+    "allowJs": true
   }
 }
