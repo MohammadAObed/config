@@ -1,10 +1,21 @@
 #!/usr/bin/env node
-// ESM CLI: runs a TS/TSX file via "tsx" with smart defaults.
-// Usage:
-//   npx moc-run                    -> runs dev.ts or dev.tsx (whichever exists)
-//   npx moc-run scripts/play.ts    -> runs that file
-//   npx moc-run dev.ts --watch     -> forwards extra args to tsx
-
+/**
+ * @packageDocumentation
+ * CLI entry for `moc-run`.
+ *
+ * Thin wrapper around the `tsx` runtime that auto-selects a default script and forwards flags untouched.
+ *
+ * Used mostly to run a typescript/javascript file, useful for testing.
+ *
+ * @remarks
+ * Looks for `dev.ts` or `dev.tsx` when no entry point is supplied, resolves relative paths for cross-platform usage, and exits if no script can be found.
+ *
+ * @example
+ * ```bash
+ * npx moc-run
+ * npx moc-run src/playground.tsx --watch
+ * ```
+ */
 import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import { createRequire } from "node:module";

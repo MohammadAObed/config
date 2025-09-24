@@ -1,5 +1,22 @@
 #!/usr/bin/env node
 // bin/moc-build-all.js
+/**
+ * @packageDocumentation
+ * CLI entry for `moc-build-all`.
+ *
+ * Exposes a reusable `run` function so the TypeDoc pipeline can generate API docs while the script remains executable.
+ *
+ * Builds every package with the shared tsup configuration and runs the size check.
+ *
+ * @remarks
+ * When invoked from the CLI the function forwards arguments to `tsup` and exits with the size check status.
+ *
+ * @example
+ * ```bash
+ * npx moc-build-all --watch
+ * ```
+ *
+ */
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";

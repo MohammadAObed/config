@@ -1,4 +1,18 @@
 #!/usr/bin/env node
+/**
+ * @packageDocumentation
+ * CLI entry for `moc-build`.
+ *
+ * Builds the current package with the shared tsup configuration.
+ *
+ * @remarks
+ * Forwards any CLI arguments directly to `tsup`.
+ *
+ * @example
+ * ```bash
+ * npx moc-build --watch
+ * ```
+ */
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";

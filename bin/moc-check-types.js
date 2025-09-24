@@ -1,4 +1,19 @@
 #!/usr/bin/env node
+/**
+ * @packageDocumentation
+ * CLI entry for `moc-check-types`.
+ *
+ * Runs the local TypeScript compiler in no-emit mode to surface type errors across the project.
+ *
+ * @remarks
+ * Resolves the `tsc` binary shipped with the consumer (or the config package) and defaults to `--noEmit`, making it safe in CI.
+ *
+ * @example
+ * ```bash
+ * npx moc-check-types
+ * npx moc-check-types --project tsconfig.build.json
+ * ```
+ */
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";

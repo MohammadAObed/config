@@ -1,7 +1,21 @@
 #!/usr/bin/env node
 // bin/moc-size.js
-// ESM wrapper around Size Limit JS API with folder/glob support + styled output
-
+/**
+ * @packageDocumentation
+ * CLI entry for `moc-size`.
+ *
+ * Wraps the Size Limit API to measure built artifacts (folders or globs) with preset-aware configuration.
+ *
+ * @remarks
+ * Reads the consumer’s `size-limit` field in `package.json`, expands folders to file lists, and compares
+ * results to the configured threshold. Exits with a non-zero status when the bundle exceeds the limit.
+ *
+ * @example
+ * ```bash
+ * npx moc-size
+ * npx moc-size dist --limit 5 kB
+ * ```
+ */
 import fg from "fast-glob";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { createRequire } from "node:module";

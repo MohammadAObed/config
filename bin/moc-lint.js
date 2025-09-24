@@ -1,4 +1,19 @@
 #!/usr/bin/env node
+/**
+ * @packageDocumentation
+ * CLI entry for `moc-lint`.
+ *
+ * Resolves the project ESLint binary and runs it with shared defaults.
+ *
+ * @remarks
+ * Falls back to `--max-warnings=0 .` when no arguments are provided so teams get fail-fast linting without extra flags.
+ *
+ * @example
+ * ```bash
+ * npx moc-lint
+ * npx moc-lint src --fix
+ * ```
+ */
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { createRequire } from "node:module";

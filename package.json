@@ -1,6 +1,6 @@
 {
   "name": "@mohammad_obed/config",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "One package to rule ESLint, TypeScript, and Prettier — plus tiny CLIs",
   "type": "module",
   "engines": {

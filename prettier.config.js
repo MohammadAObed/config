@@ -1,7 +1,23 @@
 /** @import { Config } from "prettier" */
 
-/** @type {Config} */
-
+/**
+ * The only Prettier configuration to use in your project’s `package.json`.
+ *
+ * @remarks
+ * - Enforces consistent formatting across all projects.
+ * - Matches ESLint rules to avoid conflicts (e.g., via `eslint-config-prettier`).
+ * - Intended to be the single source of truth — extend or override locally only if needed.
+ *
+ * @example
+ * - Add this line of code to your project's `package.json`:
+ * ```json
+ * "prettier": "@mohammad_obed/config/prettier.config"
+ * ```
+ *
+ * @see {@link https://prettier.io/docs/en/options.html Prettier Options}
+ *
+ * @type {Config}
+ */
 const config = {
   printWidth: 100,
   tabWidth: 2,

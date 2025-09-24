@@ -16,7 +16,33 @@ const MaxNestedCallbacks = 3;
 const MaxParams = 5;
 const IdLength = { min: 1, max: 70 };
 
+/**
+ * The only eslint configuration to import and use in your project’s `eslint.config.ts` file.
+ *
+ * @remarks
+ * - Combines TypeScript, React, Hooks, JSON, CSS, Import, and Prettier rules.
+ * - Organized as a flat config using `typescript-eslint.config`.
+ * - Applied in layers:
+ *   - Global ignores
+ *   - TS/React/Imports rules for TS/TSX files
+ *   - JSON rules for `*.json`
+ *   - CSS rules for `*.css`
+ *   - Prettier last to resolve stylistic conflicts
+ *
+ * @example
+ * - Create `eslint.config.ts` in your project root folder, then add the code below
+ * ```ts
+ * import config from "@mohammad_obed/config/eslint.config";
+ *
+ * export default config;
+ * ```
+ *
+ * @see {@link https://eslint.org/docs/latest/use/configure/configuration-files-new}
+ */
 export default tseslint.config(
+  {
+    ignores: ["node_modules", "dist", "docs", "docs/**"],
+  },
   {
     settings: {
       react: { version: "detect" },
@@ -26,7 +52,6 @@ export default tseslint.config(
         },
       },
     },
-    // ignores: ["node_modules", "dist"],
     files: ["**/*.{ts,mts,cts,tsx}"],
     extends: [
       eslint.configs.recommended,
