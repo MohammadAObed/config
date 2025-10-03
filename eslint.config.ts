@@ -41,7 +41,7 @@ const IdLength = { min: 1, max: 70 };
  */
 export default tseslint.config(
   {
-    ignores: ["node_modules", "dist", "docs", "docs/**"],
+    ignores: ["node_modules", "dist"],
   },
   {
     settings: {

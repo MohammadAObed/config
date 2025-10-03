@@ -1,5 +1,5 @@
 {
-  "exclude": ["node_modules", "dist", "docs"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
